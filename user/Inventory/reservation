@@ -1,0 +1,16 @@
+-- 6. Reservations Table
+CREATE TABLE reservations (
+    reservation_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    table_number INT NOT NULL,
+    reservation_time TIMESTAMP NOT NULL,
+    status VARCHAR(20) CHECK (status IN ('confirmed', 'cancelled', 'completed')) DEFAULT 'confirmed'
+);
+
+-- 7. Kitchen Status Table
+CREATE TABLE kitchen_status (
+    kitchen_id SERIAL PRIMARY KEY,
+    order_id INT REFERENCES orders(order_id),
+    status VARCHAR(20) CHECK (status IN ('preparing', 'ready', 'delivered')) DEFAULT 'preparing',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
