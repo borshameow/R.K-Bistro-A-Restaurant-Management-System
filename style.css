@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+h1, h2 {
+    color: #333;
+}
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+form input, form select, form textarea, form button {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
